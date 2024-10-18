@@ -1,0 +1,204 @@
+[gd_scene load_steps=18 format=3 uid="uid://bam0uakanmwhk"]
+
+[ext_resource type="Script" path="res://Scenes/hud.gd" id="1_vamia"]
+[ext_resource type="Texture2D" uid="uid://c062plcbuuuuw" path="res://Assets/miss_board.png" id="2_3d14u"]
+[ext_resource type="Texture2D" uid="uid://dgchn4vt13s8f" path="res://Assets/clock_board.png" id="2_okene"]
+[ext_resource type="Texture2D" uid="uid://4or2j8srso85" path="res://Assets/score_board.png" id="2_t1m4y"]
+[ext_resource type="Texture2D" uid="uid://b0gsml6dk6bse" path="res://Assets/wave_board.png" id="2_tjj4f"]
+[ext_resource type="Texture2D" uid="uid://p25ydpbtciiu" path="res://Assets/score_digits.png" id="3_fhptl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo0ja"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(0, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08jhg"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(31, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcyb3"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(62, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j32dh"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(93, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7tm0"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(124, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cip08"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(155, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucqbq"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(186, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvx1o"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(217, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyli4"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(248, 0, 31, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4tc4"]
+atlas = ExtResource("3_fhptl")
+region = Rect2(279, 0, 31, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4l5q6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo0ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08jhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcyb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j32dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7tm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cip08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucqbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvx1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyli4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4tc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_vamia")
+
+[node name="miss_board" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-833, 696)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_3d14u")
+
+[node name="unit" type="AnimatedSprite2D" parent="miss_board"]
+position = Vector2(20.5002, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="decimal" type="AnimatedSprite2D" parent="miss_board"]
+position = Vector2(-10.4998, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="hundred" type="AnimatedSprite2D" parent="miss_board"]
+position = Vector2(-41.4998, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="clock_board" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-833, 104)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_okene")
+
+[node name="unit" type="AnimatedSprite2D" parent="clock_board"]
+position = Vector2(25.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="decimal" type="AnimatedSprite2D" parent="clock_board"]
+position = Vector2(-6.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="hundred" type="AnimatedSprite2D" parent="clock_board"]
+position = Vector2(-45.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="wave_board" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6.031, 705)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_tjj4f")
+
+[node name="unit" type="AnimatedSprite2D" parent="wave_board"]
+position = Vector2(47.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="score_board" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-41.9688, 17)
+scale = Vector2(2, 2)
+texture = ExtResource("2_t1m4y")
+
+[node name="unit" type="AnimatedSprite2D" parent="score_board"]
+position = Vector2(47.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="decimal" type="AnimatedSprite2D" parent="score_board"]
+position = Vector2(15.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="hundred" type="AnimatedSprite2D" parent="score_board"]
+position = Vector2(-14.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+frame = 1
+frame_progress = 0.974551
+
+[node name="thousandth" type="AnimatedSprite2D" parent="score_board"]
+position = Vector2(-45.5, 0)
+sprite_frames = SubResource("SpriteFrames_4l5q6")
+
+[node name="miss_label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -76.0
+offset_top = 62.0
+offset_right = 77.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="score_label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -75.0
+offset_top = 182.0
+offset_right = 78.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="wave_label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 78.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="timer_label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -75.0
+offset_top = 302.0
+offset_right = 78.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjevsjqv58hq0"]
+
+[ext_resource type="Script" path="res://trash_spawner.gd" id="1_mdcr0"]
+[ext_resource type="AudioStream" uid="uid://chuwwlaucqypv" path="res://Assets/SoundDesign/ouverture-volet.wav" id="2_waouc"]
+
+[node name="trashSpawner" type="StaticBody2D"]
+position = Vector2(290, 170)
+script = ExtResource("1_mdcr0")
+
+[node name="window_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_waouc")
+volume_db = -22.0

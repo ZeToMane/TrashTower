@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://cds68hccdhmq8"]
+
+[ext_resource type="Texture2D" uid="uid://bno3fhb4m2nyg" path="res://Assets/Menu/trash_tower_menu.png" id="1_b71pb"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_yucic"]
+[ext_resource type="Script" path="res://Scenes/button_start.gd" id="2_j0gf1"]
+[ext_resource type="Texture2D" uid="uid://6y1jxp0l5ihw" path="res://Assets/Menu/start_button.png" id="2_rbwwg"]
+[ext_resource type="Texture2D" uid="uid://bo1nhldavy17n" path="res://Assets/Menu/credit_button.png" id="4_sa7me"]
+[ext_resource type="Texture2D" uid="uid://cn0btlrdcwu4s" path="res://Assets/Menu/quit_button.png" id="5_4r2hs"]
+[ext_resource type="Script" path="res://Scenes/credit_button.gd" id="5_w8rhm"]
+[ext_resource type="Script" path="res://Scenes/quit_button.gd" id="6_pogbb"]
+[ext_resource type="Texture2D" uid="uid://btnk2dyhjfp54" path="res://Assets/bg-side-green.png" id="8_njdct"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_yucic")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.99995, 0)
+scale = Vector2(0.368217, 0.387)
+texture = ExtResource("1_b71pb")
+
+[node name="StartButton" type="Sprite2D" parent="."]
+position = Vector2(0, 248)
+scale = Vector2(0.515, 0.387)
+texture = ExtResource("2_rbwwg")
+script = ExtResource("2_j0gf1")
+menu_node = NodePath("..")
+
+[node name="CreditButton" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 293)
+scale = Vector2(0.515, 0.387)
+texture = ExtResource("4_sa7me")
+script = ExtResource("5_w8rhm")
+menu_node = NodePath("..")
+
+[node name="QuitButton" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 325)
+scale = Vector2(0.515, 0.387)
+texture = ExtResource("5_4r2hs")
+script = ExtResource("6_pogbb")
+
+[node name="SideRight" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(457.65, -0.13501)
+scale = Vector2(4.72833, 4.16526)
+texture = ExtResource("8_njdct")
+
+[node name="SideLeft" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(-454.847, -0.13501)
+scale = Vector2(4.88457, 4.16526)
+texture = ExtResource("8_njdct")

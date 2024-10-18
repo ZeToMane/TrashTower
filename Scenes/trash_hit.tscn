@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgnsgc58ac8jo"]
+
+[ext_resource type="Shader" path="res://Scenes/outline.gdshader" id="1_f37lm"]
+[ext_resource type="Texture2D" uid="uid://cao2hwsvaa3s7" path="res://Assets/trash_drop.png" id="1_mgfe8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtost"]
+shader = ExtResource("1_f37lm")
+shader_parameter/rainbow = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 0.572
+shader_parameter/frequency = 0.5
+shader_parameter/light_offset = 1.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56o72"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vagh"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_julta"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8nqf"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58uxf"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov8g3"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jal60"]
+atlas = ExtResource("1_mgfe8")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fw32q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56o72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vagh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_julta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8nqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58uxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov8g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jal60")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="trash_hit" type="AnimatedSprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qtost")
+position = Vector2(0, -3.28422e-05)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_fw32q")
+frame = 6
+frame_progress = 1.0

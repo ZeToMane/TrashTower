@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3784qbkvfj6g"]
+
+[ext_resource type="PackedScene" uid="uid://cds68hccdhmq8" path="res://Scenes/menu.tscn" id="1_exgfk"]
+[ext_resource type="Shader" path="res://Scenes/crt.gdshader" id="2_6m35f"]
+[ext_resource type="Script" path="res://Scenes/music_manager.gd" id="3_67r2k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6xvv"]
+shader = ExtResource("2_6m35f")
+shader_parameter/resolution = Vector2(1600, 1200)
+shader_parameter/scan_line_amount = 0.45
+shader_parameter/warp_amount = 0.02
+shader_parameter/noise_amount = 0.0
+shader_parameter/interference_amount = 0.0
+shader_parameter/grille_amount = 0.179
+shader_parameter/grille_size = 1.628
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.157
+shader_parameter/roll_line_amount = 0.137
+shader_parameter/roll_speed = 1.61
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[node name="mainGame" type="Node2D"]
+
+[node name="Menu" parent="." instance=ExtResource("1_exgfk")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
+material = SubResource("ShaderMaterial_a6xvv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicManager" type="AudioStreamPlayer2D" parent="." groups=["MusicManager"]]
+script = ExtResource("3_67r2k")
